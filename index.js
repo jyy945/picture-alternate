@@ -1,0 +1,32 @@
+$(function(){
+	$('.pic-first').addClass('active');
+	$('.pic-second .img-container').each(function(){
+		$(this).width($(this).height());
+	})
+	$('.img-container').on('click',function(){
+		$('.mask').show();
+		$(this).addClass('img-show');
+	});
+	$('.mask').on('click',function(){
+		$('.img-show').removeClass('img-show');
+		$(this).hide();
+	});
+	$('.div').on('mouseover',function(){
+		$('.pic-direct').css('opacity','1');
+	});
+	$('.div').on('mouseout',function(){
+		$('.pic-direct').css('opacity','0');
+	});
+	$('.pic-direct').on('mouseover',function(){
+		$(this).css('transform','scale(1.3)');
+	});
+	$('.pic-direct').on('mouseout',function(){
+		$(this).css('transform','scale(1.0)');
+	})
+	$('.pic-pre').on('click',function(){
+		$('.pic-first').removeClass('active');
+	});
+	$('.pic-next').on('click',function(){
+		$('.pic-first').addClass('active');
+	})
+});
